@@ -4,10 +4,10 @@ exports.min = function min (array) {
         return 0;
     } else {
         var minResult = array[0];
-        for (var i = 0; i < array.length; i++) {
-        if (array[i] < minResult) {
+            for (var i = 0; i < array.length; i++) {
+            if (array[i] < minResult) {
             minResult = array[i];
-        }
+            }
         }
     }
     return minResult;
@@ -19,9 +19,9 @@ exports.max = function max (array) {
         return 0;
     } else {
         var maxResult = array[0];
-        for (var i = 0; i < array.length; i++) {
+            for (var i = 0; i < array.length; i++) {
             if (array[i] > maxResult) {
-                maxResult = array[i];
+            maxResult = array[i];
             }
         }
     }
@@ -29,5 +29,14 @@ exports.max = function max (array) {
 }
 
 exports.avg = function avg (array) {
-  return 0;
+    if (!Array.isArray(array) || !array.length) {
+        return 0;
+    } else {
+        var sum = 0;
+        for (var i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
+        average = sum / array.length;
+    }
+    return average;
 }
